@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poster Upload</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #message {
+      margin-top: 15px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Upload Your Poster</h1>
+    <input type="file" id="posterInput">
+    <button onclick="uploadPoster()">Upload</button>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function uploadPoster() {
+      const fileInput = document.getElementById('posterInput');
+      const message = document.getElementById('message');
+
+      if (fileInput.files.length > 0) {
+        message.textContent = "Poster Uploaded Successfully ✅";
+        message.style.color = "green";
+      } else {
+        message.textContent = "Please select a file before uploading!";
+        message.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
